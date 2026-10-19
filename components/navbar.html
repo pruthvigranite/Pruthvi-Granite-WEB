@@ -1,0 +1,294 @@
+<style>
+  /* Navigation Specific Styles */
+  .glass-nav {
+    background: linear-gradient(
+      135deg,
+      rgba(0, 0, 0, 0.98) 0%,
+      rgba(26, 26, 26, 0.98) 100%
+    ) !important;
+    backdrop-filter: blur(10px) !important;
+    -webkit-backdrop-filter: blur(10px) !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+    will-change: transform, opacity, background;
+  }
+
+  /* Initial state for navbar */
+  #navbar {
+    opacity: 0;
+    transform: translateY(-20px);
+    animation: fadeInDown 0.6s ease-out forwards;
+  }
+
+  @keyframes fadeInDown {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Smooth transitions */
+  .transition-all {
+    transition-property: all;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 150ms;
+  }
+
+  /* Navigation Links */
+  .nav-link {
+    position: relative;
+    padding: 8px 0;
+    font-weight: 500;
+    letter-spacing: 1px;
+    transition: color 0.3s ease, transform 0.2s ease;
+  }
+
+  .nav-link:hover {
+    transform: translateY(-2px);
+  }
+
+  .nav-link:after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #d4af37;
+    transition: width 0.3s ease;
+  }
+
+  .nav-link:hover:after {
+    width: 100%;
+  }
+
+  /* Logo styling with golden gradient animation */
+  .logo-text {
+    background: linear-gradient(90deg, #d4af37, #f9e0a0, #d4af37);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-transform: uppercase;
+    animation: shine 3s linear infinite;
+    transition: transform 0.3s ease;
+    display: block;
+    line-height: 1.1;
+  }
+
+  .logo-text:hover {
+    transform: scale(1.02);
+  }
+
+  @keyframes shine {
+    0% {
+      background-position: 0% center;
+    }
+    100% {
+      background-position: 200% center;
+    }
+  }
+
+  /* Badge styling */
+  .badge {
+    position: relative;
+    height: 50px;
+    width: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .badge:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transform: rotate(45deg);
+    border-radius: 4px;
+  }
+
+  /* Mobile menu */
+  [x-cloak] {
+    display: none !important;
+  }
+</style>
+
+<nav id="navbar" class="fixed w-full z-50 transition-all duration-300 py-3">
+  <div class="container mx-auto px-4 md:px-8 flex justify-between items-center">
+    <div class="flex items-center">
+      <a href="./index.html" class="flex items-center gap-2 md:gap-3">
+        <img
+          src="./assets/images/logo/logo.svg"
+          alt="Stonova Logo"
+          class="h-12 md:h-20 w-auto object-contain transition-all duration-300"
+        />
+        <div class="flex flex-col leading-none">
+          <span class="text-xl md:text-3xl font-black tracking-wide logo-text">PRUTHVI</span>
+          <span class="text-base md:text-xl font-light tracking-[0.3em] text-white" style="-webkit-text-fill-color: white;">GRANITE</span>
+        </div>
+      </a>
+    </div>
+
+    <div class="hidden md:flex items-center space-x-10">
+      <a
+        href="./index.html"
+        class="nav-link text-white hover:text-brand-gold text-sm uppercase"
+        >Home</a
+      >
+      <a
+        href="./onlineshowroom.html"
+        class="nav-link text-white hover:text-brand-gold text-sm uppercase"
+        >Online Showroom</a
+      >
+      <a
+        href="./gallery.html"
+        class="nav-link text-white hover:text-brand-gold text-sm uppercase"
+      >
+        Gallery
+      </a>
+      <a
+        href="./about.html"
+        class="nav-link text-white hover:text-brand-gold text-sm uppercase"
+        >About Us</a
+      >
+      <a
+        href="./contactUs.html"
+        class="nav-link text-white hover:text-brand-gold text-sm uppercase"
+        >Contact</a
+      >
+    </div>
+
+    <div class="flex items-center gap-6">
+      <img
+        src="./assets/images/logo/badge.svg"
+        alt="25+ Years"
+        class="h-20 w-auto object-contain hidden lg:block"
+      />
+
+      <button id="mobile-menu-btn" class="md:hidden text-white text-2xl p-2">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </div>
+  </div>
+
+  <div
+    id="mobile-menu"
+    class="hidden absolute top-full left-0 w-full bg-[#1a1a1a] border-t border-white/10 p-6 flex-col gap-6 shadow-xl"
+  >
+    <a
+      href="./index.html"
+      class="block text-white hover:text-brand-gold text-sm uppercase py-2 border-b border-white/10"
+      >Home</a
+    >
+    <a
+      href="./onlineshowroom.html"
+      class="block text-white hover:text-brand-gold text-sm uppercase py-2 border-b border-white/10"
+    >
+      Online Showroom
+    </a>
+    <a
+      href="./gallery.html"
+      class="block text-white hover:text-brand-gold text-sm uppercase py-2 border-b border-white/10"
+    >
+      Gallery
+    </a>
+    <a
+      href="./about.html"
+      class="block text-white hover:text-brand-gold text-sm uppercase py-2 border-b border-white/10"
+      >About Us</a
+    >
+    <a
+      href="./contactUs.html"
+      class="block text-white hover:text-brand-gold text-sm uppercase py-2"
+      >Contact</a
+    >
+  </div>
+</nav>
+
+<script>
+  (function () {
+    const navbar = document.getElementById("navbar");
+    const menuBtn = document.getElementById("mobile-menu-btn");
+    const mobileMenu = document.getElementById("mobile-menu");
+
+    // Debounce function to limit how often the scroll handler runs
+    function debounce(func, wait) {
+      let timeout;
+      return function () {
+        const context = this;
+        const args = arguments;
+        clearTimeout(timeout);
+        timeout = setTimeout(() => {
+          func.apply(context, args);
+        }, wait);
+      };
+    }
+
+    // 1. Scroll Effect Logic
+    function handleScroll() {
+      const scrollPosition = window.scrollY;
+      const isScrolled = scrollPosition > 50;
+
+      // Only update classes if they need to change
+      if (isScrolled && !navbar.classList.contains("scrolled")) {
+        navbar.classList.add("scrolled");
+        navbar.classList.add("glass-nav");
+        navbar.classList.remove("py-3"); // Adjusted from py-4 to py-3 in base HTML
+        navbar.classList.add("py-2");
+      } else if (!isScrolled && navbar.classList.contains("scrolled")) {
+        navbar.classList.remove("scrolled");
+        navbar.classList.remove("glass-nav");
+        navbar.classList.remove("py-2");
+        navbar.classList.add("py-3");
+      }
+    }
+
+    // Add smooth transition class to navbar
+    navbar.style.transition = "all 0.3s ease";
+
+    // Use passive event listener for better performance
+    window.addEventListener("scroll", debounce(handleScroll, 10), {
+      passive: true,
+    });
+
+    // Initial check on page load
+    handleScroll();
+
+    // 2. Mobile Menu Logic
+    if (menuBtn && mobileMenu) {
+      menuBtn.addEventListener("click", () => {
+        const isOpening = mobileMenu.classList.contains("hidden");
+
+        if (isOpening) {
+          mobileMenu.classList.remove("hidden");
+          // Force reflow to enable the transition
+          void mobileMenu.offsetWidth;
+          mobileMenu.classList.add("flex", "opacity-0", "translate-y-2");
+          // Start the transition
+          setTimeout(() => {
+            mobileMenu.classList.remove("opacity-0", "translate-y-2");
+          }, 10);
+        } else {
+          mobileMenu.classList.add("opacity-0", "translate-y-2");
+          // Wait for the transition to complete before hiding
+          setTimeout(() => {
+            mobileMenu.classList.add("hidden");
+            mobileMenu.classList.remove("flex");
+          }, 300);
+        }
+
+        const icon = menuBtn.querySelector("i");
+        if (!isOpening) {
+          icon.classList.remove("fa-xmark");
+          icon.classList.add("fa-bars");
+        } else {
+          icon.classList.remove("fa-bars");
+          icon.classList.add("fa-xmark");
+        }
+      });
+    }
+  })();
+</script>

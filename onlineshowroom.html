@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Online Showroom - Stonova</title>
+
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="./assets/images/logo/logo.svg"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Rufina:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              brand: {
+                gold: "#C5A059",
+                dark: "#111111",
+                gray: "#2A2A2A",
+                light: "#F5F5F5",
+                brown: "#987C38",
+              },
+            },
+            fontFamily: {
+              sans: ["Montserrat", "sans-serif"],
+              serif: ["Rufina", "serif"],
+            },
+            backgroundImage: {
+              "showroom-hero":
+                "url('../assets/images/showroom/showroom_header.png')",
+            },
+          },
+        },
+      };
+    </script>
+
+    <style>
+      /* ============================================
+         CUSTOM STYLES
+         ============================================ */
+
+      /* Scrollbar Styling */
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #1a1a1a;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #c5a059;
+        border-radius: 4px;
+      }
+
+      /* Sidebar Scrollbar */
+      aside::-webkit-scrollbar-track {
+        background: #f5f5f5;
+      }
+      aside::-webkit-scrollbar-thumb {
+        background: #e5e5e5;
+        border-radius: 4px;
+      }
+      aside::-webkit-scrollbar-thumb:hover {
+        background: #c5a059;
+      }
+
+      /* Range Slider Styling */
+      input[type="range"]::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        height: 16px;
+        width: 16px;
+        border-radius: 50%;
+        background: #c5a059;
+        cursor: pointer;
+        margin-top: -4px;
+      }
+
+      /* Accordion Summary Styling */
+      details > summary {
+        list-style: none;
+      }
+      details > summary::-webkit-details-marker {
+        display: none;
+      }
+
+      /* Base Product Image Styling */
+      #productGrid img {
+        border-radius: 1.5rem; /* 3xl rounding */
+        aspect-ratio: 1 / 1;
+        object-fit: cover;
+        width: 100%;
+        transition: transform 0.3s ease;
+        filter: none;
+      }
+
+      #productGrid .product-card:hover img {
+        transform: scale(1.02);
+      }
+
+      /* Text styling for generated cards */
+      #productGrid h3 {
+        font-family: "Montserrat", sans-serif;
+        font-weight: 400;
+        font-size: 1.5rem;
+        margin-top: 1rem;
+        color: #111;
+        text-align: center;
+      }
+
+      #productGrid p {
+        font-size: 0.8rem;
+        color: #666;
+        text-align: center;
+        margin-top: 0.25rem;
+      }
+    </style>
+  </head>
+  <body
+    class="bg-white text-gray-800 font-sans antialiased overflow-x-hidden flex flex-col min-h-screen"
+  >
+    <div id="nav-placeholder"></div>
+
+    <header
+      class="relative h-[40vh] w-full bg-showroom-hero bg-cover bg-center"
+    >
+      <div class="absolute inset-0 bg-black/40"></div>
+      <div
+        class="relative z-10 h-full container mx-auto px-6 flex flex-col justify-end pb-12 items-center text-center text-white"
+      >
+        <h1 class="font-serif text-5xl md:text-6xl mb-2 drop-shadow-lg">
+          Online Showroom
+        </h1>
+        <p class="text-gray-200 font-light tracking-widest text-sm uppercase">
+          Premium Stone Collection
+        </p>
+      </div>
+    </header>
+
+    <section class="py-12 bg-white">
+      <div class="container mx-auto px-6 max-w-[1400px]">
+        <div
+          class="flex flex-col md:flex-row justify-between items-center mb-10 pb-6 border-b border-gray-100"
+        >
+          <div class="hidden md:flex items-center gap-4 text-gray-400">
+            <button
+              class="hover:text-brand-dark transition-colors active text-brand-dark"
+            >
+              <i class="fa-solid fa-border-all text-xl"></i>
+            </button>
+            <button class="hover:text-brand-dark transition-colors">
+              <i class="fa-solid fa-list text-xl"></i>
+            </button>
+          </div>
+          <div class="relative group">
+            <button
+              class="flex items-center gap-2 text-xs font-bold tracking-widest uppercase text-gray-500 hover:text-brand-dark transition-colors"
+            >
+              Sort By <i class="fa-solid fa-chevron-down text-[10px]"></i>
+            </button>
+            <div
+              class="absolute right-0 top-full mt-2 w-40 bg-white shadow-xl rounded-lg py-2 hidden group-hover:block z-20 border border-gray-100"
+            >
+              <a
+                href="#"
+                class="block px-4 py-2 text-sm hover:bg-gray-50 text-gray-600"
+                >Newest</a
+              >
+              <a
+                href="#"
+                class="block px-4 py-2 text-sm hover:bg-gray-50 text-gray-600"
+                >Price: Low to High</a
+              >
+              <a
+                href="#"
+                class="block px-4 py-2 text-sm hover:bg-gray-50 text-gray-600"
+                >Price: High to Low</a
+              >
+            </div>
+          </div>
+
+          <button
+            id="mobileFilterBtn"
+            class="md:hidden w-full mt-4 flex justify-between items-center text-sm font-bold uppercase tracking-widest border border-gray-200 py-3 px-4 rounded"
+          >
+            <span>Filters</span>
+            <i class="fa-solid fa-sliders"></i>
+          </button>
+        </div>
+
+        <div class="flex flex-col lg:flex-row gap-12 relative">
+          <aside class="hidden lg:block w-64 flex-shrink-0">
+            <div
+              class="sticky top-24 pr-4 max-h-[calc(100vh-6rem)] overflow-y-auto custom-scrollbar"
+            >
+              <details class="group border-b border-gray-100 py-4" open>
+                <summary
+                  class="flex justify-between items-center cursor-pointer text-xs font-bold tracking-[0.15em] uppercase text-brand-dark hover:text-brand-gold transition-colors"
+                >
+                  Category
+                  <span
+                    class="transition-transform duration-300 group-open:rotate-180 text-gray-400"
+                  >
+                    <i class="fa-solid fa-chevron-down"></i>
+                  </span>
+                </summary>
+                <div class="pt-4 space-y-2">
+                  <label class="flex items-center gap-2 cursor-pointer">
+                    <input
+                      type="checkbox"
+                      name="category"
+                      value="granite_product"
+                      class="accent-brand-gold"
+                    />
+                    <span class="text-sm text-gray-500">Granite Products</span>
+                  </label>
+                  <label class="flex items-center gap-2 cursor-pointer">
+                    <input
+                      type="checkbox"
+                      name="category"
+                      value="granite"
+                      class="accent-brand-gold"
+                    />
+                    <span class="text-sm text-gray-500">Granite</span>
+                  </label>
+                </div>
+              </details>
+
+              <details class="group border-b border-gray-100 py-4">
+                <summary
+                  class="flex justify-between items-center cursor-pointer text-xs font-bold tracking-[0.15em] uppercase text-brand-dark hover:text-brand-gold transition-colors"
+                >
+                  Stone Type
+                  <span
+                    class="transition-transform duration-300 group-open:rotate-180 text-gray-400"
+                  >
+                    <i class="fa-solid fa-chevron-down"></i>
+                  </span>
+                </summary>
+                <div class="pt-4 space-y-2">
+                  <label class="flex items-center gap-2 cursor-pointer"
+                    ><input
+                      type="checkbox"
+                      name="material"
+                      value="granite slabs"
+                      class="accent-brand-gold"
+                    /><span class="text-sm text-gray-500">Granite</span></label
+                  >
+                  <label class="flex items-center gap-2 cursor-pointer"
+                    ><input
+                      type="checkbox"
+                      name="material"
+                      value="marble"
+                      class="accent-brand-gold"
+                    /><span class="text-sm text-gray-500">Marble</span></label
+                  >
+                  <label class="flex items-center gap-2 cursor-pointer"
+                    ><input
+                      type="checkbox"
+                      name="material"
+                      value="quartz slabs"
+                      class="accent-brand-gold"
+                    /><span class="text-sm text-gray-500">Quartz</span></label
+                  >
+                  <label class="flex items-center gap-2 cursor-pointer"
+                    ><input
+                      type="checkbox"
+                      name="material"
+                      value="porcelain"
+                      class="accent-brand-gold"
+                    /><span class="text-sm text-gray-500"
+                      >Porcelain</span
+                    ></label
+                  >
+                </div>
+              </details>
+
+              <details class="group border-b border-gray-100 py-4">
+                <summary
+                  class="flex justify-between items-center cursor-pointer text-xs font-bold tracking-[0.15em] uppercase text-brand-dark hover:text-brand-gold transition-colors"
+                >
+                  Color
+                  <span
+                    class="transition-transform duration-300 group-open:rotate-180 text-gray-400"
+                  >
+                    <i class="fa-solid fa-chevron-down"></i>
+                  </span>
+                </summary>
+                <div class="pt-4 grid grid-cols-2 gap-2">
+                  <label class="flex items-center gap-2 cursor-pointer"
+                    ><input
+                      type="checkbox"
+                      name="color"
+                      value="black"
+                      class="accent-brand-gold rounded-sm"
+                    /><span class="text-sm text-gray-500">Black</span></label
+                  >
+                  <label class="flex items-center gap-2 cursor-pointer"
+                    ><input
+                      type="checkbox"
+                      name="color"
+                      value="white"
+                      class="accent-brand-gold rounded-sm"
+                    /><span class="text-sm text-gray-500">White</span></label
+                  >
+                  <label class="flex items-center gap-2 cursor-pointer"
+                    ><input
+                      type="checkbox"
+                      name="color"
+                      value="gold"
+                      class="accent-brand-gold rounded-sm"
+                    /><span class="text-sm text-gray-500">Gold</span></label
+                  >
+                  <label class="flex items-center gap-2 cursor-pointer"
+                    ><input
+                      type="checkbox"
+                      name="color"
+                      value="cream"
+                      class="accent-brand-gold rounded-sm"
+                    /><span class="text-sm text-gray-500">Cream</span></label
+                  >
+                  <label class="flex items-center gap-2 cursor-pointer"
+                    ><input
+                      type="checkbox"
+                      name="color"
+                      value="gray"
+                      class="accent-brand-gold rounded-sm"
+                    /><span class="text-sm text-gray-500">Gray</span></label
+                  >
+                  <label class="flex items-center gap-2 cursor-pointer"
+                    ><input
+                      type="checkbox"
+                      name="color"
+                      value="red"
+                      class="accent-brand-gold rounded-sm"
+                    /><span class="text-sm text-gray-500">Red</span></label
+                  >
+                </div>
+              </details>
+
+              <details class="group border-b border-gray-100 py-4">
+                <summary
+                  class="flex justify-between items-center cursor-pointer text-xs font-bold tracking-[0.15em] uppercase text-brand-dark hover:text-brand-gold transition-colors"
+                >
+                  Price
+                  <span
+                    class="transition-transform duration-300 group-open:rotate-180 text-gray-400"
+                  >
+                    <i class="fa-solid fa-chevron-down"></i>
+                  </span>
+                </summary>
+                <div class="pt-4">
+                  <input
+                    type="range"
+                    id="priceRange"
+                    min="0"
+                    max="1000"
+                    value="1000"
+                    class="w-full h-1 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-brand-gold mb-4"
+                  />
+                  <div class="flex items-center gap-2">
+                    <input
+                      type="number"
+                      id="minPrice"
+                      placeholder="0"
+                      class="w-1/2 py-2 px-3 bg-gray-50 text-xs border border-transparent focus:border-brand-gold outline-none rounded"
+                    />
+                    <span class="text-gray-400">-</span>
+                    <input
+                      type="number"
+                      id="maxPrice"
+                      placeholder="1000"
+                      class="w-1/2 py-2 px-3 bg-gray-50 text-xs border border-transparent focus:border-brand-gold outline-none rounded"
+                    />
+                  </div>
+                </div>
+              </details>
+
+              <details class="group border-b border-gray-100 py-4">
+                <summary
+                  class="flex justify-between items-center cursor-pointer text-xs font-bold tracking-[0.15em] uppercase text-brand-dark hover:text-brand-gold transition-colors"
+                >
+                  Finish
+                  <span
+                    class="transition-transform duration-300 group-open:rotate-180 text-gray-400"
+                  >
+                    <i class="fa-solid fa-chevron-down"></i>
+                  </span>
+                </summary>
+                <div class="pt-4 space-y-2">
+                  <label class="flex items-center gap-2 cursor-pointer"
+                    ><input
+                      type="checkbox"
+                      name="finish"
+                      value="polished"
+                      class="accent-brand-gold"
+                    /><span class="text-sm text-gray-500">Polished</span></label
+                  >
+                  <label class="flex items-center gap-2 cursor-pointer"
+                    ><input
+                      type="checkbox"
+                      name="finish"
+                      value="honed"
+                      class="accent-brand-gold"
+                    /><span class="text-sm text-gray-500">Honed</span></label
+                  >
+                  <label class="flex items-center gap-2 cursor-pointer"
+                    ><input
+                      type="checkbox"
+                      name="finish"
+                      value="soft"
+                      class="accent-brand-gold"
+                    /><span class="text-sm text-gray-500"
+                      >Soft / Leather</span
+                    ></label
+                  >
+                </div>
+              </details>
+
+              <details class="group border-b border-gray-100 py-4">
+                <summary
+                  class="flex justify-between items-center cursor-pointer text-xs font-bold tracking-[0.15em] uppercase text-brand-dark hover:text-brand-gold transition-colors"
+                >
+                  Size
+                  <span
+                    class="transition-transform duration-300 group-open:rotate-180 text-gray-400"
+                  >
+                    <i class="fa-solid fa-chevron-down"></i>
+                  </span>
+                </summary>
+                <div class="pt-4 space-y-2">
+                  <label class="flex items-center gap-2 cursor-pointer"
+                    ><input
+                      type="checkbox"
+                      name="size"
+                      value="2.60 × 1.80 meters"
+                      class="accent-brand-gold"
+                    /><span class="text-sm text-gray-500"
+                      >2.60m x 1.80m</span
+                    ></label
+                  >
+                  <label class="flex items-center gap-2 cursor-pointer"
+                    ><input
+                      type="checkbox"
+                      name="size"
+                      value="2.80 × 1.90 meters"
+                      class="accent-brand-gold"
+                    /><span class="text-sm text-gray-500"
+                      >2.80m x 1.90m</span
+                    ></label
+                  >
+                </div>
+              </details>
+
+              <details class="group border-b border-gray-100 py-4">
+                <summary
+                  class="flex justify-between items-center cursor-pointer text-xs font-bold tracking-[0.15em] uppercase text-brand-dark hover:text-brand-gold transition-colors"
+                >
+                  Thickness
+                  <span
+                    class="transition-transform duration-300 group-open:rotate-180 text-gray-400"
+                  >
+                    <i class="fa-solid fa-chevron-down"></i>
+                  </span>
+                </summary>
+                <div class="pt-4 space-y-2">
+                  <label class="flex items-center gap-2 cursor-pointer"
+                    ><input
+                      type="checkbox"
+                      name="thickness"
+                      value="12mm"
+                      class="accent-brand-gold"
+                    /><span class="text-sm text-gray-500">12mm</span></label
+                  >
+                  <label class="flex items-center gap-2 cursor-pointer"
+                    ><input
+                      type="checkbox"
+                      name="thickness"
+                      value="20mm"
+                      class="accent-brand-gold"
+                    /><span class="text-sm text-gray-500">20mm</span></label
+                  >
+                  <label class="flex items-center gap-2 cursor-pointer"
+                    ><input
+                      type="checkbox"
+                      name="thickness"
+                      value="30mm"
+                      class="accent-brand-gold"
+                    /><span class="text-sm text-gray-500">30mm</span></label
+                  >
+                </div>
+              </details>
+            </div>
+          </aside>
+
+          <div
+            id="mobileFilterPanel"
+            class="fixed inset-0 bg-white z-50 transform translate-x-full transition-transform duration-300 overflow-y-auto lg:hidden"
+          >
+            <div
+              class="sticky top-0 bg-white border-b border-gray-100 p-6 flex justify-between items-center z-10"
+            >
+              <h3 class="font-serif text-2xl font-bold">Filters</h3>
+              <button
+                id="closeMobileFilter"
+                class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-gray-100 transition"
+              >
+                <i class="fa-solid fa-xmark text-xl text-gray-500"></i>
+              </button>
+            </div>
+
+            <form onsubmit="return false;" class="p-6">
+              <details class="group border-b border-gray-100 py-4" open>
+                <summary
+                  class="flex justify-between items-center cursor-pointer text-sm font-bold tracking-widest uppercase text-brand-dark"
+                >
+                  Category
+                  <i class="fa-solid fa-chevron-down text-xs"></i>
+                </summary>
+                <div class="pt-4 space-y-3">
+                  <label class="flex items-center gap-3 cursor-pointer">
+                    <input
+                      type="checkbox"
+                      name="category"
+                      value="granite_product"
+                      class="accent-brand-gold h-4 w-4"
+                    />
+                    <span class="text-sm text-gray-500">Granite Products</span>
+                  </label>
+                  <label class="flex items-center gap-3 cursor-pointer">
+                    <input
+                      type="checkbox"
+                      name="category"
+                      value="granite"
+                      class="accent-brand-gold h-4 w-4"
+                    />
+                    <span class="text-sm text-gray-500">Granite</span>
+                  </label>
+                </div>
+              </details>
+
+              <details class="group border-b border-gray-100 py-4">
+                <summary
+                  class="flex justify-between items-center cursor-pointer text-sm font-bold tracking-widest uppercase text-brand-dark"
+                >
+                  Stone Type
+                  <i class="fa-solid fa-chevron-down text-xs"></i>
+                </summary>
+                <div class="pt-4 space-y-2">
+                  <label class="flex items-center gap-2 cursor-pointer"
+                    ><input
+                      type="checkbox"
+                      name="material"
+                      value="granite slabs"
+                      class="accent-brand-gold"
+                    /><span class="text-sm text-gray-500">Granite</span></label
+                  >
+                  <label class="flex items-center gap-2 cursor-pointer"
+                    ><input
+                      type="checkbox"
+                      name="material"
+                      value="marble"
+                      class="accent-brand-gold"
+                    /><span class="text-sm text-gray-500">Marble</span></label
+                  >
+                  <label class="flex items-center gap-2 cursor-pointer"
+                    ><input
+                      type="checkbox"
+                      name="material"
+                      value="quartz slabs"
+                      class="accent-brand-gold"
+                    /><span class="text-sm text-gray-500">Quartz</span></label
+                  >
+                  <label class="flex items-center gap-2 cursor-pointer"
+                    ><input
+                      type="checkbox"
+                      name="material"
+                      value="porcelain"
+                      class="accent-brand-gold"
+                    /><span class="text-sm text-gray-500"
+                      >Porcelain</span
+                    ></label
+                  >
+                </div>
+              </details>
+
+              <details class="group border-b border-gray-100 py-4">
+                <summary
+                  class="flex justify-between items-center cursor-pointer text-sm font-bold tracking-widest uppercase text-brand-dark"
+                >
+                  Price (LKR)
+                  <i class="fa-solid fa-chevron-down text-xs"></i>
+                </summary>
+                <div class="pt-4">
+                  <input
+                    type="range"
+                    id="priceRangeMobile"
+                    min="0"
+                    max="1000"
+                    value="1000"
+                    class="w-full h-1 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-brand-gold mb-4"
+                  />
+                  <div class="flex items-center gap-2">
+                    <input
+                      type="number"
+                      id="minPriceMobile"
+                      placeholder="Min"
+                      class="w-full p-2 text-sm border border-gray-200 rounded"
+                    />
+                    <input
+                      type="number"
+                      id="maxPriceMobile"
+                      placeholder="Max"
+                      value="1000"
+                      class="w-full p-2 text-sm border border-gray-200 rounded"
+                    />
+                  </div>
+                </div>
+              </details>
+
+              <div class="mt-8">
+                <button
+                  id="applyMobileFilters"
+                  class="w-full bg-brand-dark text-white py-4 font-bold tracking-widest uppercase text-sm hover:bg-brand-gold transition-colors"
+                >
+                  View Results
+                </button>
+              </div>
+            </form>
+          </div>
+
+          <div class="w-full lg:flex-1">
+            <div
+              id="productGrid"
+              class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-x-8 gap-y-16"
+            >
+              <div class="col-span-full flex justify-center py-32">
+                <div
+                  class="animate-spin rounded-full h-8 w-8 border-b-2 border-brand-dark"
+                ></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div id="footer-placeholder"></div>
+
+    <script>
+      // Component Loading
+      function fetchComponent(elementId, filePath) {
+        return fetch(filePath)
+          .then((response) => {
+            if (!response.ok) throw new Error("Load failed");
+            return response.text();
+          })
+          .then((html) => {
+            const container = document.getElementById(elementId);
+            container.innerHTML = html;
+            container.querySelectorAll("script").forEach((old) => {
+              const script = document.createElement("script");
+              script.textContent = old.textContent;
+              document.body.appendChild(script);
+            });
+          })
+          .catch((e) => console.error("Error loading component:", e));
+      }
+
+      document.addEventListener("DOMContentLoaded", () => {
+        Promise.all([
+          fetchComponent("nav-placeholder", "./components/navbar.html"),
+          fetchComponent("footer-placeholder", "./components/footer.html"),
+        ]).then(() => {
+          if (typeof AOS !== "undefined") {
+            AOS.init({
+              once: true,
+              offset: 50,
+              duration: 800,
+            });
+          }
+        });
+
+        // External Logic handles mobile menu now (in filter.js)
+      });
+    </script>
+
+    <script src="filter.js"></script>
+  </body>
+</html>

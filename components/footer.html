@@ -1,0 +1,260 @@
+<style>
+  /* Footer Specific Styles & Animations */
+
+  /* Logo Text Animation (Matches Navbar) */
+  .footer-logo-text {
+    background: linear-gradient(90deg, #d4af37, #f9e0a0, #d4af37);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-transform: uppercase;
+    animation: shine 3s linear infinite;
+    display: block;
+    line-height: 1.1;
+  }
+
+  @keyframes shine {
+    0% {
+      background-position: 0% center;
+    }
+    100% {
+      background-position: 200% center;
+    }
+  }
+
+  /* Link Hover Animations */
+  .footer-link {
+    position: relative;
+    display: inline-block;
+    transition: all 0.3s ease;
+  }
+
+  .footer-link:hover {
+    color: #d4af37; /* Brand Gold */
+    transform: translateX(5px);
+  }
+
+  /* Social Icon Hover */
+  .social-icon {
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+
+  .social-icon:hover {
+    transform: translateY(-3px) scale(1.1);
+    color: white;
+  }
+
+  /* Prevent Cloudflare email obfuscation from hiding email */
+  .__cf_email__ {
+    display: inline !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+</style>
+
+<footer class="bg-black text-white border-t border-white/10">
+  <div class="container mx-auto px-6 py-12 lg:py-16">
+    <div class="flex flex-col lg:flex-row justify-between gap-12 lg:gap-20">
+      <div class="lg:w-5/12 space-y-8">
+        <a href="./index.html" class="flex items-center gap-3 group w-fit">
+          <img
+            src="./assets/images/logo/logo.svg"
+            alt="Stonova Logo"
+            class="h-12 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
+          />
+          <div class="flex flex-col leading-none">
+            <span class="text-2xl font-black tracking-wide footer-logo-text"
+              >PRUTHVI</span
+            >
+            <span class="text-base font-light tracking-[0.3em] footer-logo-text"
+              >GRANITE</span
+            >
+          </div>
+        </a>
+
+        <p class="text-gray-300 text-sm leading-relaxed max-w-md">
+          Elevating interiors with the finest granite. Discover timeless beauty
+          and enduring quality for your home or business.
+        </p>
+
+        <div class="space-y-4">
+          <div class="flex items-start gap-4 group">
+            <div class="mt-1 w-6 flex justify-center">
+              <i
+                class="fa-solid fa-map-location-dot text-[#d4af37] text-xl transition-colors group-hover:text-white"
+              ></i>
+            </div>
+            <span
+              class="text-gray-300 text-sm group-hover:text-white transition-colors"
+              >21/6 Vijayakumarathunga Mawatha, <br />
+              Polhengoda Gardens, Colombo 5, <br />
+              Colombo 00500</span
+            >
+          </div>
+          <div class="flex items-center gap-4 group">
+            <div class="w-6 flex justify-center">
+              <i
+                class="fa-solid fa-phone text-[#d4af37] text-xl transition-colors group-hover:text-white"
+              ></i>
+            </div>
+            <span
+              class="text-gray-300 text-sm group-hover:text-white transition-colors"
+              >+94 77 585 4624</span
+            >
+          </div>
+          <div class="flex items-center gap-4 group">
+            <div class="w-6 flex justify-center">
+              <i
+                class="fa-solid fa-clock text-[#d4af37] text-xl transition-colors group-hover:text-white"
+              ></i>
+            </div>
+            <span
+              class="text-gray-300 text-sm group-hover:text-white transition-colors"
+              >Mon-Sat: 9am - 6pm</span
+            >
+          </div>
+          <div class="flex items-center gap-4 group">
+            <div class="w-6 flex justify-center">
+              <i
+                class="fa-solid fa-envelope text-[#d4af37] text-xl transition-colors group-hover:text-white"
+              ></i>
+            </div>
+            <a
+              href="mailto:info@pruthvigranite.com"
+              id="footer-email"
+              class="text-gray-300 text-sm group-hover:text-white transition-colors"
+              >info@pruthvigranite.com</a
+            >
+          </div>
+        </div>
+      </div>
+
+      <div class="lg:w-6/12 flex flex-col justify-between">
+        <div
+          class="flex flex-col sm:flex-row gap-12 sm:gap-24 mb-10 sm:items-start sm:justify-end"
+        >
+          <div class="sm:text-right">
+            <h4
+              class="text-[#d4af37] font-bold text-lg mb-6 uppercase tracking-wider"
+            >
+              Explore
+            </h4>
+            <ul class="space-y-4 text-base font-medium text-gray-300">
+              <li>
+                <a href="./index.html" class="footer-link">Home</a>
+              </li>
+              <li>
+                <a href="./about.html" class="footer-link">About Us</a>
+              </li>
+              <li>
+                <a href="./onlineshowroom.html" class="footer-link"
+                  >Online Showroom</a
+                >
+              </li>
+              <li>
+                <a href="./contactUs.html" class="footer-link">Contacts</a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="sm:text-right">
+            <h4
+              class="text-[#d4af37] font-bold text-lg mb-6 uppercase tracking-wider"
+            >
+              Gallery
+            </h4>
+            <ul class="space-y-4 text-base font-medium text-gray-300">
+              <li>
+                <a href="./gallery/Kitchen_gallery.html" class="footer-link"
+                  >Kitchen</a
+                >
+              </li>
+              <li>
+                <a href="./gallery/Bathroom_gallery.html" class="footer-link"
+                  >Bathroom</a
+                >
+              </li>
+              <li>
+                <a href="./gallery/other_gallery.html" class="footer-link"
+                  >Other</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="flex gap-6 sm:justify-end mt-4 sm:mt-0">
+          <a
+            href="https://www.instagram.com/pruthvi_granite"
+            class="text-[#d4af37] text-2xl social-icon"
+            aria-label="Instagram"
+            ><i class="fa-brands fa-instagram"></i
+          ></a>
+          <a
+            href="https://www.facebook.com/pruthviGranite"
+            class="text-[#d4af37] text-2xl social-icon"
+            aria-label="Facebook"
+            ><i class="fa-brands fa-facebook"></i
+          ></a>
+          <a
+            href="https://www.linkedin.com/company/pruthvi-granite"
+            class="text-[#d4af37] text-2xl social-icon"
+            aria-label="LinkedIn"
+            ><i class="fa-brands fa-linkedin"></i
+          ></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="border-t border-white/10 bg-black py-6">
+    <div
+      class="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-gray-400"
+    >
+      <p class="hover:text-[#d4af37] transition-colors cursor-default">
+        &copy; PruthviGranite. All rights reserved
+      </p>
+      <p>
+        Made by
+        <a
+          href="https://cozeylon.com/"
+          class="text-[#d4af37] hover:text-white transition-colors underline decoration-gray-500 underline-offset-4 font-medium"
+          >Cozylon</a
+        >
+      </p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Ensure email is always visible, even if Cloudflare obfuscates it
+  (function () {
+    const emailElement = document.getElementById("footer-email");
+    if (emailElement) {
+      // Force the email to be visible
+      const email = "info@pruthvigranite.com";
+
+      // Check if Cloudflare obfuscated it
+      const cfEmail = emailElement.querySelector(".__cf_email__");
+      if (cfEmail) {
+        // Cloudflare obfuscated it, decode and show
+        emailElement.textContent = email;
+        emailElement.href = "mailto:" + email;
+      } else if (emailElement.textContent.trim() !== email) {
+        // Email was changed, restore it
+        emailElement.textContent = email;
+        emailElement.href = "mailto:" + email;
+      }
+
+      // Remove any __cf_email__ spans
+      const cfSpans = emailElement.querySelectorAll(".__cf_email__");
+      cfSpans.forEach((span) => span.remove());
+
+      // Ensure visibility
+      emailElement.style.display = "inline";
+      emailElement.style.visibility = "visible";
+      emailElement.style.opacity = "1";
+    }
+  })();
+</script>

@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Under Maintenance | Luxury Granite & Stone</title>
+
+    <link rel="icon" type="image/svg+xml" href="./assets/images/logo/logo.svg" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ["Inter", "sans-serif"],
+              serif: ["Playfair Display", "serif"],
+            },
+            colors: {
+              gold: {
+                400: "#D4AF37",
+                500: "#C5A028",
+                600: "#B08D23",
+              },
+              stone: {
+                800: "#1c1c1e",
+                900: "#121212",
+              },
+            },
+          },
+        },
+      };
+    </script>
+
+    <style>
+      /* Gold Gradient Text */
+      .text-gradient-gold {
+        background: linear-gradient(to right, #d4af37, #f2e8c9, #d4af37);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-size: 200% auto;
+        animation: shine 5s linear infinite;
+      }
+
+      /* Subtle Background Animation */
+      @keyframes shine {
+        to {
+          background-position: 200% center;
+        }
+      }
+
+      /* Granite Texture Background */
+      .bg-granite {
+        background-image: url("https://images.unsplash.com/photo-1485627658391-1365e4e0dbfe?q=80&w=2070&auto=format&fit=crop");
+        background-size: cover;
+        background-position: center;
+      }
+
+      /* Fade In Animation */
+      .fade-in-up {
+        animation: fadeInUp 1s ease-out forwards;
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      @keyframes fadeInUp {
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .delay-100 {
+        animation-delay: 0.1s;
+      }
+      .delay-200 {
+        animation-delay: 0.2s;
+      }
+      .delay-300 {
+        animation-delay: 0.3s;
+      }
+    </style>
+  </head>
+  <body
+    class="bg-stone-900 text-white min-h-screen flex flex-col relative overflow-hidden font-sans"
+  >
+    <div class="absolute inset-0 bg-granite z-0"></div>
+    <div class="absolute inset-0 bg-stone-900/80 z-10 backdrop-blur-sm"></div>
+
+    <main
+      class="relative z-20 flex-grow flex flex-col items-center justify-center p-6 text-center"
+    >
+      <div class="mb-8 fade-in-up">
+        <div
+          class="text-3xl md:text-4xl font-serif font-bold tracking-widest uppercase border-b-2 border-gold-400 pb-2 inline-block"
+        >
+          StoNoVa<span class="text-gold-400">.</span>
+        </div>
+      </div>
+
+      <div class="mb-6 fade-in-up delay-100 text-gold-400 text-5xl md:text-6xl">
+        <i class="fa-solid fa-compass-drafting"></i>
+      </div>
+
+      <h1
+        class="text-4xl md:text-6xl font-serif font-bold mb-4 fade-in-up delay-200"
+      >
+        <span class="text-gradient-gold">Crafting Perfection</span>
+      </h1>
+
+      <p
+        class="text-gray-300 text-lg md:text-xl max-w-2xl mb-10 leading-relaxed fade-in-up delay-200"
+      >
+        We are currently polishing our surfaces to bring you a more refined
+        online experience. Our digital showroom is undergoing renovation.
+      </p>
+
+      <div class="w-full max-w-md fade-in-up delay-300">
+        <p class="text-sm text-gray-400 mb-2 uppercase tracking-wider">
+          Notify me when ready
+        </p>
+        <form id="notifyForm" class="flex flex-col sm:flex-row gap-3">
+          <input
+            type="email"
+            id="email"
+            placeholder="Enter your email address"
+            required
+            class="flex-grow px-4 py-3 bg-stone-800/50 border border-gray-600 rounded-md focus:outline-none focus:border-gold-400 text-white placeholder-gray-500 transition-colors"
+          />
+          <button
+            type="submit"
+            class="px-6 py-3 bg-gold-500 hover:bg-gold-600 text-stone-900 font-semibold rounded-md transition-all duration-300 transform hover:scale-105 shadow-lg shadow-gold-500/20"
+          >
+            Notify Me
+          </button>
+        </form>
+        <div id="formMessage" class="mt-3 text-sm hidden"></div>
+      </div>
+
+      <div
+        class="mt-16 flex flex-col md:flex-row gap-8 text-gray-400 text-sm fade-in-up delay-300"
+      >
+        <div class="flex items-center gap-2">
+          <i class="fa-solid fa-phone text-gold-400"></i>
+          <span>+1 (555) 123-4567</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <i class="fa-solid fa-envelope text-gold-400"></i>
+          <span>concierge@granite.com</span>
+        </div>
+      </div>
+    </main>
+
+    <footer
+      class="relative z-20 py-6 text-center text-gray-600 text-xs uppercase tracking-widest"
+    >
+      &copy; 2025 Granite & Co. All Rights Reserved.
+    </footer>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const form = document.getElementById("notifyForm");
+        const messageDiv = document.getElementById("formMessage");
+
+        form.addEventListener("submit", (e) => {
+          e.preventDefault();
+          const email = document.getElementById("email").value;
+
+          if (email) {
+            // Simulate API call
+            const btn = form.querySelector("button");
+            const originalText = btn.innerText;
+
+            btn.innerText = "Sending...";
+            btn.disabled = true;
+            btn.classList.add("opacity-75");
+
+            setTimeout(() => {
+              // Success State
+              messageDiv.innerHTML = `<span class="text-green-400"><i class="fa-solid fa-check-circle mr-1"></i> You're on the list! We'll be in touch.</span>`;
+              messageDiv.classList.remove("hidden");
+
+              btn.innerText = originalText;
+              btn.disabled = false;
+              btn.classList.remove("opacity-75");
+              form.reset();
+            }, 1500);
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

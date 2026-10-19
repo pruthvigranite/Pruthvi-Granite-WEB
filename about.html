@@ -1,0 +1,427 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Us | Pruthvi Granite</title>
+
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="./assets/images/logo/logo.svg"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Rufina:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <!-- AOS (Animate On Scroll) Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              brand: {
+                gold: "#C5A059",
+                dark: "#111111",
+                gray: "#2A2A2A",
+                light: "#F5F5F5",
+                brown: "#987C38",
+              },
+            },
+            fontFamily: {
+              sans: ["Montserrat", "sans-serif"],
+              serif: ["Rufina", "serif"],
+            },
+            backgroundImage: {
+              "about-header": "url('../assets/images/about/aboutus.webp')",
+            },
+          },
+        },
+      };
+    </script>
+
+    <style>
+      /* Custom Utilities */
+      .glass-nav {
+        background: rgba(17, 17, 17, 0.95);
+        backdrop-filter: blur(5px);
+      }
+
+      /* Scrollbar Styling */
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #1a1a1a;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #c5a059;
+        border-radius: 4px;
+      }
+
+      /* Gold Vertical Divider */
+      .gold-divider {
+        width: 2px;
+        background-color: #c5a059;
+        height: 100%;
+        display: none; /* Hidden on mobile */
+      }
+      @media (min-width: 768px) {
+        .gold-divider {
+          display: block;
+        }
+      }
+    </style>
+  </head>
+  <body
+    class="bg-white text-gray-800 font-sans antialiased overflow-x-hidden flex flex-col min-h-screen"
+  >
+    <div id="nav-placeholder"></div>
+
+    <header class="relative h-[45vh] w-full bg-about-header bg-cover bg-center">
+      <div class="absolute inset-0 bg-black/40"></div>
+
+      <div
+        class="relative z-10 h-full container mx-auto px-6 flex flex-col justify-end pb-16 items-center text-center text-white"
+      >
+        <h1 class="font-serif text-5xl md:text-7xl mb-4 drop-shadow-lg">
+          About Us
+        </h1>
+        <p
+          class="text-lg md:text-xl font-light tracking-wide max-w-3xl text-gray-100 drop-shadow-md"
+        >
+          Sri Lanka’s leading granite manufacturer
+          <span class="text-brand-gold font-medium">Pruthvi Granite</span>.
+        </p>
+      </div>
+    </header>
+
+    <section class="py-20 md:py-28 bg-white">
+      <div class="container mx-auto px-6">
+        <div class="flex flex-col lg:flex-row items-center gap-16">
+          <div class="w-full lg:w-1/2">
+            <div class="relative">
+              <img
+                src="../assets/images/about/intro.png"
+                alt="Stonova Factory"
+                class="w-full h-[500px] object-cover"
+              />
+              <div
+                class="absolute -bottom-6 -right-6 w-full h-full border-2 border-brand-gold/30 -z-10 hidden md:block"
+              ></div>
+
+              <div
+                class="absolute top-10 -left-6 bg-brand-dark text-white p-6 shadow-xl hidden md:block"
+              >
+                <span
+                  class="block text-4xl font-serif text-brand-gold font-bold"
+                  >25+</span
+                >
+                <span class="text-xs uppercase tracking-wider"
+                  >Years of<br />Excellence</span
+                >
+              </div>
+            </div>
+          </div>
+
+          <div class="w-full lg:w-1/2 space-y-6">
+            <div class="text-center md:text-left">
+              <p
+                class="text-brand-gold text-xs font-semibold uppercase tracking-[0.2em] mb-3"
+              >
+                Pruthvi Granite
+              </p>
+              <h2 class="font-serif text-4xl md:text-5xl text-brand-dark mb-2">
+                Manufacturer &amp; Exporter
+              </h2>
+              <p
+                class="text-gray-500 text-sm md:text-base max-w-xl mx-auto md:mx-0"
+              >
+                Decades of expertise in sourcing, processing, and supplying
+                high-grade natural stone for architecture and design.
+              </p>
+            </div>
+
+            <div
+              class="rounded-sm border border-gray-200/80 bg-gradient-to-br from-white to-brand-light/40 p-6 md:p-8 shadow-sm"
+            >
+              <p
+                class="text-gray-600 leading-relaxed text-center md:text-left text-[15px] md:text-base"
+              >
+                We are a leading granite manufacturer based in
+                <strong class="text-brand-dark font-semibold">Sri Lanka</strong
+                >, delivering premium materials to local and international
+                markets. Quality, consistency, and customer satisfaction drive
+                everything we do.
+              </p>
+              <p
+                class="text-gray-600 leading-relaxed text-center md:text-left text-[15px] md:text-base mt-4"
+              >
+                Builders, architects, contractors, and homeowners rely on us for
+                durable, elegant granite at competitive value—tailored to
+                projects of every scale.
+              </p>
+            </div>
+
+            <div
+              class="relative overflow-hidden rounded-sm bg-brand-dark text-white p-6 md:p-7 border-l-4 border-brand-gold"
+            >
+              <div
+                class="absolute top-0 right-0 w-32 h-32 bg-brand-gold/10 rounded-full -translate-y-1/2 translate-x-1/2"
+                aria-hidden="true"
+              ></div>
+              <p
+                class="text-brand-gold text-xs font-semibold uppercase tracking-widest mb-2 relative"
+              >
+                Global presence
+              </p>
+              <h3 class="font-serif text-xl md:text-2xl mb-3 relative">
+                Pruthvi Granite — House of Natural Stones
+              </h3>
+              <p
+                class="text-gray-300 text-sm md:text-[15px] leading-relaxed relative"
+              >
+                In
+                <strong class="text-white font-medium"
+                  >Sri Lanka, Australia</strong
+                >, we operate under the Pruthvi Granite brand: the finest Sri
+                Lankan and imported granites, with the same standards of
+                excellence and reliability.
+              </p>
+            </div>
+
+            <div class="flex flex-col sm:flex-row sm:items-end gap-6 pt-2">
+              <img
+                src="./assets/images/logo/signature.png"
+                alt="Signature"
+                class="h-12 opacity-60 mx-auto sm:mx-0"
+                onerror="this.style.display = 'none'"
+              />
+              <div class="text-center sm:text-left flex-1">
+                <p class="font-bold text-brand-dark">
+                  Pruthvi Damsara Galewelage
+                </p>
+                <p class="text-sm text-gray-500">Founder &amp; CEO</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section
+      class="py-16 bg-brand-dark text-white border-y border-brand-gold/20"
+    >
+      <div class="container mx-auto px-6">
+        <div
+          class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center divide-x divide-white/10"
+        >
+          <div>
+            <h3 class="text-4xl md:text-5xl font-serif text-brand-gold mb-2">
+              25+
+            </h3>
+            <p class="text-xs uppercase tracking-widest text-gray-400">
+              Years Experience
+            </p>
+          </div>
+          <div>
+            <h3 class="text-4xl md:text-5xl font-serif text-brand-gold mb-2">
+              1.2k
+            </h3>
+            <p class="text-xs uppercase tracking-widest text-gray-400">
+              Projects Done
+            </p>
+          </div>
+          <div>
+            <h3 class="text-4xl md:text-5xl font-serif text-brand-gold mb-2">
+              300+
+            </h3>
+            <p class="text-xs uppercase tracking-widest text-gray-400">
+              Varieties
+            </p>
+          </div>
+          <div>
+            <h3 class="text-4xl md:text-5xl font-serif text-brand-gold mb-2">
+              100%
+            </h3>
+            <p class="text-xs uppercase tracking-widest text-gray-400">
+              Satisfaction
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-20 bg-brand-light">
+      <div class="container mx-auto px-6">
+        <div class="text-center mb-14 md:mb-16">
+          <p
+            class="text-brand-gold text-xs font-semibold uppercase tracking-[0.2em] mb-3"
+          >
+            Why partner with us
+          </p>
+          <h2 class="font-serif text-4xl md:text-5xl text-brand-dark mb-4">
+            Why Choose Us
+          </h2>
+          <p class="text-gray-600 max-w-2xl mx-auto leading-relaxed">
+            From our quarries and factory to your site straightforward value
+            backed by export-grade quality.
+          </p>
+        </div>
+
+        <div
+          class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6"
+        >
+          <div
+            class="bg-white p-8 shadow-sm hover:shadow-lg transition-all duration-300 border border-gray-100 hover:border-brand-gold/40 group text-center lg:text-left"
+          >
+            <div
+              class="w-14 h-14 mx-auto lg:mx-0 bg-brand-light rounded-full flex items-center justify-center mb-5 group-hover:bg-brand-dark transition-colors"
+            >
+              <i
+                class="fa-solid fa-industry text-xl text-brand-dark group-hover:text-brand-gold"
+              ></i>
+            </div>
+            <h3 class="font-serif text-lg text-brand-dark mb-2">
+              Direct manufacturer
+            </h3>
+            <p class="text-gray-600 text-sm leading-relaxed">
+              Factory-direct supply, no unnecessary middlemen.
+            </p>
+          </div>
+
+          <div
+            class="bg-white p-8 shadow-sm hover:shadow-lg transition-all duration-300 border border-gray-100 hover:border-brand-gold/40 group text-center lg:text-left"
+          >
+            <div
+              class="w-14 h-14 mx-auto lg:mx-0 bg-brand-light rounded-full flex items-center justify-center mb-5 group-hover:bg-brand-dark transition-colors"
+            >
+              <i
+                class="fa-solid fa-gem text-xl text-brand-dark group-hover:text-brand-gold"
+              ></i>
+            </div>
+            <h3 class="font-serif text-lg text-brand-dark mb-2">
+              Premium materials
+            </h3>
+            <p class="text-gray-600 text-sm leading-relaxed">
+              High-grade granite selected for durability and finish.
+            </p>
+          </div>
+
+          <div
+            class="bg-white p-8 shadow-sm hover:shadow-lg transition-all duration-300 border border-gray-100 hover:border-brand-gold/40 group text-center lg:text-left"
+          >
+            <div
+              class="w-14 h-14 mx-auto lg:mx-0 bg-brand-light rounded-full flex items-center justify-center mb-5 group-hover:bg-brand-dark transition-colors"
+            >
+              <i
+                class="fa-solid fa-tags text-xl text-brand-dark group-hover:text-brand-gold"
+              ></i>
+            </div>
+            <h3 class="font-serif text-lg text-brand-dark mb-2">
+              Competitive pricing
+            </h3>
+            <p class="text-gray-600 text-sm leading-relaxed">
+              Strong value on local and international orders.
+            </p>
+          </div>
+
+          <div
+            class="bg-white p-8 shadow-sm hover:shadow-lg transition-all duration-300 border border-gray-100 hover:border-brand-gold/40 group text-center lg:text-left"
+          >
+            <div
+              class="w-14 h-14 mx-auto lg:mx-0 bg-brand-light rounded-full flex items-center justify-center mb-5 group-hover:bg-brand-dark transition-colors"
+            >
+              <i
+                class="fa-solid fa-globe text-xl text-brand-dark group-hover:text-brand-gold"
+              ></i>
+            </div>
+            <h3 class="font-serif text-lg text-brand-dark mb-2">
+              Export experience
+            </h3>
+            <p class="text-gray-600 text-sm leading-relaxed">
+              Proven logistics and documentation for global markets.
+            </p>
+          </div>
+
+          <div
+            class="bg-white p-8 shadow-sm hover:shadow-lg transition-all duration-300 border border-gray-100 hover:border-brand-gold/40 group sm:col-span-2 lg:col-span-1 xl:col-span-1 text-center lg:text-left"
+          >
+            <div
+              class="w-14 h-14 mx-auto lg:mx-0 bg-brand-light rounded-full flex items-center justify-center mb-5 group-hover:bg-brand-dark transition-colors"
+            >
+              <i
+                class="fa-solid fa-helmet-safety text-xl text-brand-dark group-hover:text-brand-gold"
+              ></i>
+            </div>
+            <h3 class="font-serif text-lg text-brand-dark mb-2">
+              Trusted by professionals
+            </h3>
+            <p class="text-gray-600 text-sm leading-relaxed">
+              Builders, architects, and contractors choose us with confidence.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div id="footer-placeholder"></div>
+
+    <script>
+      // --- Component Loading Logic ---
+      function fetchComponent(elementId, filePath) {
+        return fetch(filePath)
+          .then((response) => {
+            if (!response.ok) throw new Error("Load failed");
+            return response.text();
+          })
+          .then((html) => {
+            const container = document.getElementById(elementId);
+            container.innerHTML = html;
+            // Execute internal scripts (like mobile menu)
+            container.querySelectorAll("script").forEach((old) => {
+              const script = document.createElement("script");
+              script.textContent = old.textContent;
+              document.body.appendChild(script);
+            });
+          })
+          .catch((e) => console.error("Error loading component:", e));
+      }
+
+      document.addEventListener("DOMContentLoaded", () => {
+        // 1. Load Navbar and Footer
+        Promise.all([
+          fetchComponent("nav-placeholder", "./components/navbar.html"),
+          fetchComponent("footer-placeholder", "./components/footer.html"),
+        ]).then(() => {
+          // 2. Initialize AOS only after content is loaded
+          if (typeof AOS !== "undefined") {
+            AOS.init({
+              once: true,
+              offset: 100,
+              duration: 800,
+              easing: "ease-out-cubic",
+            });
+          }
+        });
+
+        // --- EXISTING PAGE SPECIFIC SCRIPTS GO HERE (e.g. Swiper, Forms) ---
+        // (No additional inline scripts required for this page currently)
+      });
+    </script>
+  </body>
+</html>

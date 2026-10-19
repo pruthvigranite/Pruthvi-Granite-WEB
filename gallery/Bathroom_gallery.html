@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bathroom Gallery - Stonova</title>
+
+    <link rel="icon" type="image/svg+xml" href="../assets/images/logo/logo.svg" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Rufina:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <!-- AOS (Animate On Scroll) Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              brand: {
+                gold: "#C5A059",
+                dark: "#111111",
+                gray: "#2A2A2A",
+                light: "#F5F5F5",
+                brown: "#987C38", // Slightly darker gold for the "View More" button
+              },
+            },
+            fontFamily: {
+              sans: ["Montserrat", "sans-serif"],
+              serif: ["Rufina", "serif"],
+            },
+            backgroundImage: {
+              "kitchen-hero":
+                "url('../assets/images/gallery/bathroom_header.webp')",
+            },
+          },
+        },
+      };
+    </script>
+
+    <style>
+      /* Custom Utilities */
+      .glass-nav {
+        background: rgba(17, 17, 17, 0.95);
+        backdrop-filter: blur(5px);
+      }
+
+      /* Scrollbar Styling */
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #1a1a1a;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #c5a059;
+        border-radius: 4px;
+      }
+    </style>
+  </head>
+  <body
+    class="bg-white text-gray-800 font-sans antialiased overflow-x-hidden flex flex-col min-h-screen"
+  >
+    <div id="nav-placeholder"></div>
+
+    <header class="relative h-[45vh] w-full bg-kitchen-hero bg-cover bg-center">
+      <div class="absolute inset-0 bg-black/40"></div>
+
+      <div
+        class="relative z-10 h-full container mx-auto px-6 flex flex-col justify-end pb-16 items-center text-center text-white"
+      >
+        <h1 class="font-serif text-5xl md:text-7xl mb-4 drop-shadow-lg">
+          Bathroom
+        </h1>
+        <p
+          class="text-lg md:text-xl font-light tracking-wide max-w-2xl text-gray-100 drop-shadow-md"
+        >
+          25 Years of Craftsmanship, Shaping Bathrooms of Lasting Beauty
+        </p>
+      </div>
+    </header>
+
+    <section class="py-16 bg-white">
+      <div class="container mx-auto px-6 max-w-4xl text-center">
+        <p class="text-gray-600 mb-6 text-lg leading-relaxed">
+          Our stone craftsmanship began over two decades ago, rooted in a
+          heritage of precision and respect for natural materials. Today, that
+          experience flows into every bathroom surface we create. From polished
+          marble vanities to sleek granite walls, each piece is selected and
+          finished with the same care that has defined our work for 25
+          years—bringing refined luxury, durability, and timeless calm to modern
+          Australian bathrooms.
+        </p>
+      </div>
+    </section>
+
+    <!-- <section class="pb-20">
+      <div class="container mx-auto px-6">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+          <div
+            class="aspect-square overflow-hidden border border-brand-gold/50 group"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1600585152220-90363fe7e115?q=80&w=800&auto=format&fit=crop"
+              alt="Light Green Modern Kitchen"
+              class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+            />
+          </div>
+
+          <div
+            class="aspect-square overflow-hidden border border-brand-gold/50 group"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1600607686527-6fb886090705?q=80&w=800&auto=format&fit=crop"
+              alt="Black Marble Backsplash"
+              class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+            />
+          </div>
+
+          <div
+            class="aspect-square overflow-hidden border border-brand-gold/50 group"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1600585152220-90363fe7e115?q=80&w=800&auto=format&fit=crop"
+              alt="Dark Luxury Kitchen Island"
+              class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+            />
+          </div>
+
+          <div
+            class="aspect-square overflow-hidden border border-brand-gold/50 group"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1565538810643-b5bdb714032a?q=80&w=800&auto=format&fit=crop"
+              alt="Rustic Wood Kitchen"
+              class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+            />
+          </div>
+
+          <div
+            class="aspect-square overflow-hidden border border-brand-gold/50 group"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1507089947368-19c1da9775ae?q=80&w=800&auto=format&fit=crop"
+              alt="Modern White Marble Kitchen"
+              class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+            />
+          </div>
+
+          <div
+            class="aspect-square overflow-hidden border border-brand-gold/50 group"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1595846519845-68e298c2edd8?q=80&w=800&auto=format&fit=crop"
+              alt="Grey Cabinet Kitchen"
+              class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+            />
+          </div>
+        </div>
+
+        <!-- <div class="text-center">
+          <button
+            class="bg-brand-brown hover:bg-brand-gold text-white font-medium py-3 px-12 transition-colors duration-300 shadow-md"
+          >
+            View more
+          </button>
+        </div> -->
+      </div>
+    </section> -->
+
+    <div id="footer-placeholder"></div>
+
+    <script>
+      // --- Component Loading Logic ---
+
+      function fetchComponent(elementId, filePath) {
+        return fetch(filePath)
+          .then((response) => {
+            if (!response.ok) throw new Error("Load failed");
+            return response.text();
+          })
+          .then((html) => {
+            const container = document.getElementById(elementId);
+            container.innerHTML = html;
+
+            // Execute internal scripts (like mobile menu)
+            container.querySelectorAll("script").forEach((old) => {
+              const script = document.createElement("script");
+              script.textContent = old.textContent;
+              document.body.appendChild(script);
+            });
+          })
+          .catch((e) => console.error("Error loading component:", e));
+      }
+
+      document.addEventListener("DOMContentLoaded", () => {
+        // 1. Load Navbar and Footer
+        Promise.all([
+          fetchComponent("nav-placeholder", "../components/navbar.html"),
+          fetchComponent("footer-placeholder", "../components/footer.html"),
+        ]).then(() => {
+          // 2. Fix navigation links for gallery page (add ../ prefix)
+          function fixNavigationLinks() {
+            // Fix navbar links
+            const navbar = document.getElementById("navbar");
+            if (navbar) {
+              // Fix all anchor links in navbar
+              const navbarLinks = navbar.querySelectorAll("a[href]");
+              navbarLinks.forEach((link) => {
+                const href = link.getAttribute("href");
+                // Only modify relative paths starting with ./
+                if (href && href.startsWith("./") && !href.startsWith("../")) {
+                  link.setAttribute("href", "../" + href.substring(2));
+                }
+              });
+            }
+
+            // Fix footer links (footer is loaded inside footer-placeholder div)
+            const footerPlaceholder =
+              document.getElementById("footer-placeholder");
+            if (footerPlaceholder) {
+              // Find footer element or all links within placeholder
+              const footer =
+                footerPlaceholder.querySelector("footer") || footerPlaceholder;
+              const footerLinks = footer.querySelectorAll("a[href]");
+              footerLinks.forEach((link) => {
+                const href = link.getAttribute("href");
+                // Only modify relative paths starting with ./
+                if (href && href.startsWith("./") && !href.startsWith("../")) {
+                  link.setAttribute("href", "../" + href.substring(2));
+                }
+              });
+            }
+          }
+
+          // Fix navigation links
+          fixNavigationLinks();
+
+          // 3. Batch fetch navbar logo and badge images
+          function loadNavbarImages() {
+            const navbar = document.getElementById("navbar");
+            if (!navbar) return;
+
+            const logoImg = navbar.querySelector('img[alt="Stonova Logo"]');
+            const badgeImg = navbar.querySelector('img[alt="25+ Years"]');
+
+            // Batch fetch both images and update src after successful fetch
+            Promise.all([
+              fetch("../assets/images/logo/logo.svg")
+                .then((response) => {
+                  if (!response.ok) throw new Error("Logo load failed");
+                  if (logoImg) {
+                    logoImg.src = "../assets/images/logo/logo.svg";
+                  }
+                })
+                .catch((e) => console.error("Error loading logo:", e)),
+              fetch("../assets/images/logo/badge.svg")
+                .then((response) => {
+                  if (!response.ok) throw new Error("Badge load failed");
+                  if (badgeImg) {
+                    badgeImg.src = "../assets/images/logo/badge.svg";
+                  }
+                })
+                .catch((e) => console.error("Error loading badge:", e)),
+            ]);
+          }
+
+          // Load navbar images
+          loadNavbarImages();
+
+          // 3.5. Load footer logo
+          function loadFooterLogo() {
+            const footerPlaceholder = document.getElementById("footer-placeholder");
+            if (!footerPlaceholder) return;
+
+            const footerLogoImg = footerPlaceholder.querySelector('img[alt="Stonova Logo"]');
+            if (!footerLogoImg) return;
+
+            // Fetch and update footer logo
+            fetch("../assets/images/logo/logo.svg")
+              .then((response) => {
+                if (!response.ok) throw new Error("Footer logo load failed");
+                footerLogoImg.src = "../assets/images/logo/logo.svg";
+              })
+              .catch((e) => console.error("Error loading footer logo:", e));
+          }
+
+          // Load footer logo
+          loadFooterLogo();
+
+          // 4. Initialize AOS only after content is loaded
+          if (typeof AOS !== "undefined") {
+            AOS.init({
+              once: true,
+              offset: 100,
+              duration: 800,
+              easing: "ease-out-cubic",
+            });
+          }
+
+          // Navbar scroll effect (after navbar is loaded)
+          const navbar = document.getElementById("navbar");
+          if (navbar) {
+            window.addEventListener("scroll", () => {
+              if (window.scrollY > 50) {
+                navbar.classList.add("glass-nav");
+                navbar.classList.remove("py-4");
+                navbar.classList.add("py-2");
+              } else {
+                navbar.classList.remove("glass-nav");
+                navbar.classList.remove("py-2");
+                navbar.classList.add("py-4");
+              }
+            });
+          }
+        });
+
+        // --- EXISTING PAGE SPECIFIC SCRIPTS GO HERE (e.g. Swiper, Forms) ---
+        // Make sure to preserve any existing JS found in this file below this point
+      });
+    </script>
+  </body>
+</html>

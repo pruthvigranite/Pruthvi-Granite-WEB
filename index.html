@@ -1,0 +1,856 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Pruthvi Granite | #1 Premium Granite Supplier in Sri Lanka</title>
+    <meta
+      name="description"
+      content="Pruthvi Granite is Sri Lanka's leading supplier of premium architectural stone and bespoke granite. Export-quality slabs from India, Brazil, and Norway for luxury interiors."
+    />
+    <meta
+      name="keywords"
+      content="Granite Sri Lanka, Best Granite in Colombo, Kitchen worktops Sri Lanka, Premium Stone Supplier, Natural Stone Sri Lanka, Pruthvi Granite"
+    />
+    <meta name="author" content="Pruthvi Granite" />
+    <link rel="canonical" href="https://www.pruthvigranite.com/" />
+
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:title"
+      content="Pruthvi Granite | Bespoke Architectural Stone & Premium Granite"
+    />
+    <meta
+      property="og:description"
+      content="Transforming premium global granite into timeless architectural statements for Sri Lankan's most prestigious interiors."
+    />
+    <meta property="og:image" content="./assets/images/logo/og-image.jpg" />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "Pruthvi Granite",
+        "image": "https://www.pruthvigranite.com/assets/images/logo/logo.svg",
+        "@id": "",
+        "url": "https://www.pruthvigranite.com",
+        "telephone": "+94XXXXXXXXX",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Your Street Address",
+          "addressLocality": "Colombo",
+          "addressCountry": "LK"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 6.9271,
+          "longitude": 79.8612
+        },
+        "openingHoursSpecification": {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday",
+            "Saturday"
+          ],
+          "opens": "09:00",
+          "closes": "18:00"
+        }
+      }
+    </script>
+
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="./assets/images/logo/logo.svg"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              brand: {
+                gold: "#C5A059",
+                goldDark: "#A38445",
+                dark: "#0A0A0A",
+                charcoal: "#171717",
+                cream: "#F9F6F0",
+              },
+            },
+            fontFamily: {
+              sans: ["Montserrat", "sans-serif"],
+              serif: ["Playfair Display", "serif"],
+            },
+          },
+        },
+      };
+    </script>
+
+    <style>
+      /* Luxury Scrollbar */
+      ::-webkit-scrollbar {
+        width: 6px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #0a0a0a;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #c5a059;
+        border-radius: 10px;
+      }
+
+      /* Ken Burns Effect Refinement */
+      .ken-burns {
+        animation: kenburns 20s ease infinite alternate;
+      }
+      @keyframes kenburns {
+        0% {
+          transform: scale(1);
+        }
+        100% {
+          transform: scale(1.15);
+        }
+      }
+
+      /* Glassmorphism Classes */
+      .glass-card {
+        background: rgba(23, 23, 23, 0.7);
+        backdrop-filter: blur(12px);
+        border: 1px solid rgba(197, 160, 89, 0.1);
+      }
+
+      /* Premium Button Hover */
+      .btn-premium {
+        position: relative;
+        overflow: hidden;
+        transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+      }
+      .btn-premium::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(255, 255, 255, 0.2),
+          transparent
+        );
+        transition: 0.5s;
+      }
+      .btn-premium:hover::before {
+        left: 100%;
+      }
+
+      /* Elegant Scroll Cue */
+      .scroll-cue {
+        width: 1px;
+        height: 60px;
+        background: linear-gradient(to bottom, #c5a059, transparent);
+        margin: 0 auto;
+        animation: scrollLine 2s infinite;
+      }
+      @keyframes scrollLine {
+        0% {
+          transform: scaleY(0);
+          transform-origin: top;
+        }
+        50% {
+          transform: scaleY(1);
+          transform-origin: top;
+        }
+        51% {
+          transform: scaleY(1);
+          transform-origin: bottom;
+        }
+        100% {
+          transform: scaleY(0);
+          transform-origin: bottom;
+        }
+      }
+
+      /* Stone Slab 3D Refinement */
+      .stone-slab-card {
+        perspective: 1500px;
+        transition: transform 0.8s cubic-bezier(0.2, 1, 0.2, 1);
+      }
+      @media (min-width: 1024px) {
+        .stone-slab-card:hover {
+          transform: rotateY(-5deg) rotateX(2deg) translateY(-10px);
+        }
+      }
+    </style>
+  </head>
+  <body class="bg-white text-gray-900 font-sans antialiased overflow-x-hidden">
+    <div id="nav-placeholder"></div>
+
+    <main>
+      <header
+        class="relative min-h-screen w-full flex items-center justify-center overflow-hidden bg-brand-dark"
+      >
+        <div id="hero-slider" class="absolute inset-0 z-0">
+          <div
+            id="dynamic-bg"
+            class="absolute inset-0 transition-opacity duration-1000 bg-cover bg-center"
+          ></div>
+          <div
+            class="absolute inset-0 bg-gradient-to-b from-black/70 via-black/40 to-brand-dark z-10"
+          ></div>
+        </div>
+
+        <div
+          class="relative z-20 container mx-auto px-6 py-20 text-center text-white"
+        >
+          <h1
+            class="font-serif text-3xl sm:text-5xl md:text-7xl lg:text-8xl leading-[1.1] mb-7 italic"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            House of Natural Stones <br />
+            <!-- <span class="not-italic font-bold">Sculpted for Living.</span> -->
+          </h1>
+          <p
+            class="font-sans text-gray-300 text-xs sm:text-sm md:text-lg tracking-wide max-w-2xl mx-auto mb-10 leading-relaxed"
+            data-aos="fade-up"
+            data-aos-delay="400"
+          >
+            Transforming premium global granite into timeless architectural
+            statements for Sri Lankan's most prestigious interiors. Discover why
+            we are the leading <strong>granite supplier in Sri Lanka</strong>.
+          </p>
+
+          <div
+            class="flex flex-col sm:flex-row gap-5 justify-center items-center"
+            data-aos="fade-up"
+            data-aos-delay="600"
+          >
+            <a
+              href="./onlineshowroom.html"
+              class="btn-premium group w-full sm:w-auto px-10 py-4 bg-brand-gold text-brand-dark font-bold tracking-widest text-xs uppercase hover:bg-white transition-colors duration-500"
+            >
+              Explore Collection
+            </a>
+            <a
+              href="#contact"
+              class="group w-full sm:w-auto px-10 py-4 border border-white/30 text-white font-bold tracking-widest text-xs uppercase hover:bg-white hover:text-brand-dark transition-all duration-500"
+            >
+              Request Concierge Quote
+            </a>
+          </div>
+        </div>
+
+        <div
+          class="absolute bottom-6 left-1/2 -translate-x-1/2 z-20 text-center hidden sm:block"
+        >
+          <span
+            class="text-[10px] uppercase tracking-[0.2em] text-brand-gold/60 mb-2 block"
+            >Scroll</span
+          >
+          <div class="scroll-cue"></div>
+        </div>
+      </header>
+
+      <section class="py-16 md:py-24 bg-white overflow-hidden">
+        <div class="container mx-auto px-6">
+          <div class="grid lg:grid-cols-12 gap-12 items-center">
+            <div class="lg:col-span-5" data-aos="fade-right">
+              <h2 class="font-serif text-3xl md:text-5xl text-brand-dark mb-6">
+                Our Granite <br /><span class="text-brand-gold italic"
+                  >Distinction in Sri Lanka</span
+                >
+              </h2>
+              <p
+                class="text-gray-600 leading-relaxed mb-8 text-sm md:text-base"
+              >
+                We don't just supply stone; we curate geological history. Each
+                slab in our boutique collection is hand-selected from the
+                world’s most exclusive quarries, ensuring your project possesses
+                a signature as unique as a fingerprint.
+              </p>
+              <div class="space-y-6">
+                <div class="flex gap-4">
+                  <div
+                    class="w-12 h-12 flex-shrink-0 bg-brand-cream flex items-center justify-center text-brand-gold"
+                  >
+                    <i class="fa-solid fa-gem"></i>
+                  </div>
+                  <div>
+                    <h4 class="font-bold text-brand-dark">A-Grade Curation</h4>
+                    <p class="text-xs md:text-sm text-gray-500">
+                      Only the top 5% of extracted slabs meet our structural and
+                      aesthetic criteria.
+                    </p>
+                  </div>
+                </div>
+                <div class="flex gap-4">
+                  <div
+                    class="w-12 h-12 flex-shrink-0 bg-brand-cream flex items-center justify-center text-brand-gold"
+                  >
+                    <i class="fa-solid fa-microchip"></i>
+                  </div>
+                  <div>
+                    <h4 class="font-bold text-brand-dark">
+                      Precision Engineering
+                    </h4>
+                    <p class="text-xs md:text-sm text-gray-500">
+                      Advanced multi-blade automatic cutters and polishers
+                      ensure flawless finishes for Sri Lankan homes.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="lg:col-span-7 mt-10 lg:mt-0" data-aos="zoom-in">
+              <div class="relative">
+                <img
+                  src="./assets/images/home/kitchen.webp"
+                  alt="High-end Kitchen Granite Sri Lanka"
+                  class="w-full rounded-sm shadow-2xl"
+                  loading="lazy"
+                />
+                <div
+                  class="absolute -bottom-6 -left-6 md:-bottom-10 md:-left-10 glass-card p-5 md:p-8 max-w-[250px] md:max-w-xs shadow-xl"
+                >
+                  <p
+                    class="font-serif text-xl md:text-2xl text-brand-gold mb-2"
+                  >
+                    "Flawless"
+                  </p>
+                  <p class="text-[10px] md:text-xs text-gray-400 italic">
+                    "The texture and depth of the Absolute Black slabs redefined
+                    our entire penthouse design."
+                  </p>
+                  <p
+                    class="text-[8px] md:text-[10px] uppercase tracking-widest mt-4 font-bold text-white"
+                  >
+                    — ARCO ARCHITECTS
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="collection"
+        class="py-16 md:py-24 bg-brand-dark text-white overflow-hidden"
+      >
+        <div class="container mx-auto px-6 mb-12 md:mb-16">
+          <div
+            class="flex flex-col md:flex-row justify-between items-start md:items-end gap-6"
+          >
+            <div data-aos="fade-up">
+              <h2 class="font-serif text-3xl md:text-6xl mb-4">
+                The Material <span class="italic text-brand-gold">Edit</span>
+              </h2>
+              <p class="text-gray-400 max-w-lg text-sm">
+                A curated selection of the season's most sought-after granite
+                and natural stone varieties available in Colombo.
+              </p>
+            </div>
+            <a
+              href="./onlineshowroom.html"
+              class="text-brand-gold border-b border-brand-gold pb-1 text-xs md:text-sm uppercase tracking-widest hover:text-white hover:border-white transition-all"
+              data-aos="fade-left"
+              >View All Materials</a
+            >
+          </div>
+        </div>
+
+        <div class="px-6">
+          <div class="swiper mySwiper !overflow-visible">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <div class="stone-slab-card group">
+                  <div class="relative aspect-[3/4] overflow-hidden">
+                    <img
+                      src="./assets/images/home/absolute_black.webp"
+                      alt="Absolute Black Granite Sri Lanka"
+                      class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
+                      loading="lazy"
+                    />
+                    <div
+                      class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80"
+                    ></div>
+                    <div class="absolute top-4 right-4">
+                      <span
+                        class="bg-brand-gold text-black text-[10px] font-bold px-3 py-1 uppercase tracking-tighter"
+                        >Origin: India</span
+                      >
+                    </div>
+                    <div class="absolute bottom-6 left-6 md:bottom-8 md:left-8">
+                      <h3 class="font-serif text-2xl md:text-3xl mb-2">
+                        Absolute Black
+                      </h3>
+                      <p
+                        class="text-brand-gold text-[10px] tracking-[0.2em] uppercase font-bold mb-4"
+                      >
+                        Deep Volcanic Texture
+                      </p>
+                      <a
+                        href="./products/Absolute_Black.html"
+                        class="inline-flex items-center text-xs uppercase tracking-widest group-hover:gap-4 transition-all"
+                      >
+                        Details
+                        <i
+                          class="fa-solid fa-arrow-right ml-2 text-brand-gold"
+                        ></i>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="stone-slab-card group">
+                  <div class="relative aspect-[3/4] overflow-hidden">
+                    <img
+                      src="./assets/images/home/aromedha_white.webp"
+                      alt="Aromedha White Granite Sri Lanka"
+                      class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
+                      loading="lazy"
+                    />
+                    <div
+                      class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80"
+                    ></div>
+                    <div class="absolute top-4 right-4">
+                      <span
+                        class="bg-brand-gold text-black text-[10px] font-bold px-3 py-1 uppercase tracking-tighter"
+                        >Origin: Brazil</span
+                      >
+                    </div>
+                    <div class="absolute bottom-6 left-6 md:bottom-8 md:left-8">
+                      <h3 class="font-serif text-2xl md:text-3xl mb-2">
+                        Aromedha White
+                      </h3>
+                      <p
+                        class="text-brand-gold text-[10px] tracking-[0.2em] uppercase font-bold mb-4"
+                      >
+                        Calacatta-Inspired Veining
+                      </p>
+                      <a
+                        href="./products/Aromedha_white.html"
+                        class="inline-flex items-center text-xs uppercase tracking-widest group-hover:gap-4 transition-all"
+                      >
+                        Details
+                        <i
+                          class="fa-solid fa-arrow-right ml-2 text-brand-gold"
+                        ></i>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="stone-slab-card group">
+                  <div class="relative aspect-[3/4] overflow-hidden">
+                    <img
+                      src="./assets/images/home/blue_pearl.webp"
+                      alt="Blue Pearl Granite Colombo"
+                      class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
+                      loading="lazy"
+                    />
+                    <div
+                      class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80"
+                    ></div>
+                    <div class="absolute top-4 right-4">
+                      <span
+                        class="bg-brand-gold text-black text-[10px] font-bold px-3 py-1 uppercase tracking-tighter"
+                        >Origin: Norway</span
+                      >
+                    </div>
+                    <div class="absolute bottom-6 left-6 md:bottom-8 md:left-8">
+                      <h3 class="font-serif text-2xl md:text-3xl mb-2">
+                        Blue Pearl
+                      </h3>
+                      <p
+                        class="text-brand-gold text-[10px] tracking-[0.2em] uppercase font-bold mb-4"
+                      >
+                        Metallic Labradorite Glow
+                      </p>
+                      <a
+                        href="./products/Blue_Pearl.html"
+                        class="inline-flex items-center text-xs uppercase tracking-widest group-hover:gap-4 transition-all"
+                      >
+                        Details
+                        <i
+                          class="fa-solid fa-arrow-right ml-2 text-brand-gold"
+                        ></i>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="mt-12 flex justify-center gap-4">
+              <div class="swiper-pagination !static !w-auto"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="py-16 md:py-24 bg-brand-cream overflow-hidden">
+        <div class="container mx-auto px-6">
+          <div class="text-center mb-12 md:mb-16" data-aos="fade-up">
+            <h2 class="font-serif text-3xl md:text-5xl mb-4">
+              The Journey of a <span class="italic text-brand-gold">Slab</span>
+            </h2>
+            <div class="w-24 h-1 bg-brand-gold mx-auto"></div>
+          </div>
+          <div class="grid sm:grid-cols-2 md:grid-cols-4 gap-8 relative">
+            <div
+              class="text-center group"
+              data-aos="fade-up"
+              data-aos-delay="100"
+            >
+              <div
+                class="w-16 h-16 rounded-full border border-brand-gold flex items-center justify-center mx-auto mb-6 group-hover:bg-brand-gold transition-all duration-500"
+              >
+                <span class="font-serif text-xl group-hover:text-black"
+                  >01</span
+                >
+              </div>
+              <h4 class="font-bold uppercase tracking-widest text-xs mb-3">
+                Sourcing
+              </h4>
+              <p class="text-gray-500 text-sm">
+                Direct inspections at quarries in Italy, Brazil, and India.
+              </p>
+            </div>
+            <div
+              class="text-center group"
+              data-aos="fade-up"
+              data-aos-delay="200"
+            >
+              <div
+                class="w-16 h-16 rounded-full border border-brand-gold flex items-center justify-center mx-auto mb-6 group-hover:bg-brand-gold transition-all duration-500"
+              >
+                <span class="font-serif text-xl group-hover:text-black"
+                  >02</span
+                >
+              </div>
+              <h4 class="font-bold uppercase tracking-widest text-xs mb-3">
+                Templating
+              </h4>
+              <p class="text-gray-500 text-sm">
+                Laser-accurate digital mapping of your space.
+              </p>
+            </div>
+            <div
+              class="text-center group"
+              data-aos="fade-up"
+              data-aos-delay="300"
+            >
+              <div
+                class="w-16 h-16 rounded-full border border-brand-gold flex items-center justify-center mx-auto mb-6 group-hover:bg-brand-gold transition-all duration-500"
+              >
+                <span class="font-serif text-xl group-hover:text-black"
+                  >03</span
+                >
+              </div>
+              <h4 class="font-bold uppercase tracking-widest text-xs mb-3">
+                Sculpting
+              </h4>
+              <p class="text-gray-500 text-sm">
+                CNC precision cutting & artisanal edge polishing.
+              </p>
+            </div>
+            <div
+              class="text-center group"
+              data-aos="fade-up"
+              data-aos-delay="400"
+            >
+              <div
+                class="w-16 h-16 rounded-full border border-brand-gold flex items-center justify-center mx-auto mb-6 group-hover:bg-brand-gold transition-all duration-500"
+              >
+                <span class="font-serif text-xl group-hover:text-black"
+                  >04</span
+                >
+              </div>
+              <h4 class="font-bold uppercase tracking-widest text-xs mb-3">
+                Artistry
+              </h4>
+              <p class="text-gray-500 text-sm">
+                White-glove installation by our master stonemasons.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="relative py-24 md:py-32 bg-brand-dark overflow-hidden">
+        <div class="absolute inset-0 z-0 ken-burns">
+          <img
+            src="./assets/images/home/bathroom.webp"
+            alt="Luxury Bathroom Sri Lanka"
+            class="w-full h-full object-cover opacity-30"
+            loading="lazy"
+          />
+        </div>
+        <div class="absolute inset-0 bg-brand-dark/60 z-10"></div>
+
+        <div class="container mx-auto px-6 relative z-20 text-center">
+          <div
+            class="max-w-3xl mx-auto glass-card p-8 md:p-12 border-brand-gold/20"
+            data-aos="zoom-in"
+          >
+            <h2 class="font-serif text-3xl md:text-6xl text-white mb-6">
+              Elevate Your Next <br />
+              <span class="text-brand-gold">Project</span>
+            </h2>
+            <p
+              class="text-gray-300 mb-10 leading-relaxed uppercase tracking-widest text-[10px] md:text-xs font-bold"
+            >
+              Inquire now for exclusive pricing on our New Seasonal Arrivals.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+              <a
+                href="#contact"
+                class="btn-premium px-12 py-4 bg-brand-gold text-brand-dark font-bold tracking-widest text-xs uppercase text-center"
+                >Get Instant Access</a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="py-16 md:py-24 bg-white overflow-hidden">
+        <div class="container mx-auto px-6">
+          <div class="grid lg:grid-cols-2 gap-16 items-center">
+            <div data-aos="fade-right">
+              <h2 class="font-serif text-4xl md:text-5xl text-brand-dark mb-6">
+                Let’s Discuss <br /><span class="text-brand-gold italic"
+                  >Your Vision</span
+                >
+              </h2>
+              <p class="text-gray-600 mb-10 text-sm md:text-base">
+                Our consultants are available for private viewings and
+                architectural consultations at our
+                <strong>Sri Lanka Showroom</strong>.
+              </p>
+
+              <div class="space-y-6">
+                <div class="flex items-center gap-4 group cursor-pointer">
+                  <div
+                    class="w-10 h-10 border border-brand-gold flex items-center justify-center group-hover:bg-brand-gold transition-all"
+                  >
+                    <i
+                      class="fa-solid fa-phone text-xs group-hover:text-black"
+                    ></i>
+                  </div>
+                  <span
+                    class="text-xs md:text-sm font-medium tracking-widest uppercase"
+                    >Book a Call</span
+                  >
+                </div>
+                <div class="flex items-center gap-4 group cursor-pointer">
+                  <div
+                    class="w-10 h-10 border border-brand-gold flex items-center justify-center group-hover:bg-brand-gold transition-all"
+                  >
+                    <i
+                      class="fa-solid fa-location-dot text-xs group-hover:text-black"
+                    ></i>
+                  </div>
+                  <span
+                    class="text-xs md:text-sm font-medium tracking-widest uppercase"
+                    >Visit Showroom</span
+                  >
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="bg-brand-dark p-6 md:p-12 shadow-2xl relative mt-10 lg:mt-0"
+              data-aos="fade-left"
+            >
+              <div
+                class="absolute -top-4 -left-4 w-12 h-12 md:w-20 md:h-20 border-t-2 border-l-2 border-brand-gold"
+              ></div>
+              <form id="home-contact-form" class="space-y-6">
+                <input
+                  type="hidden"
+                  name="access_key"
+                  value="818c4d05-5229-4b1b-9dd7-5eb23895e162"
+                />
+                <div>
+                  <label
+                    class="text-[10px] uppercase tracking-[0.2em] text-brand-gold font-bold mb-2 block"
+                    >Full Name</label
+                  >
+                  <input
+                    type="text"
+                    name="name"
+                    required
+                    class="w-full bg-transparent border-b border-white/20 py-3 text-white focus:outline-none focus:border-brand-gold transition-colors"
+                  />
+                </div>
+                <div>
+                  <label
+                    class="text-[10px] uppercase tracking-[0.2em] text-brand-gold font-bold mb-2 block"
+                    >Email Address</label
+                  >
+                  <input
+                    type="email"
+                    name="email"
+                    required
+                    class="w-full bg-transparent border-b border-white/20 py-3 text-white focus:outline-none focus:border-brand-gold transition-colors"
+                  />
+                </div>
+                <div>
+                  <label
+                    class="text-[10px] uppercase tracking-[0.2em] text-brand-gold font-bold mb-2 block"
+                    >Tell us about your project</label
+                  >
+                  <textarea
+                    name="message"
+                    rows="4"
+                    class="w-full bg-transparent border-b border-white/20 py-3 text-white focus:outline-none focus:border-brand-gold transition-colors"
+                  ></textarea>
+                </div>
+                <button
+                  type="submit"
+                  id="home-submit-btn"
+                  class="w-full py-4 bg-brand-gold text-black font-bold uppercase tracking-widest text-[10px] hover:bg-white transition-all"
+                >
+                  Send Inquiry
+                </button>
+              </form>
+              <div id="home-success-message" class="hidden text-center py-10">
+                <i
+                  class="fa-solid fa-circle-check text-brand-gold text-5xl mb-4"
+                ></i>
+                <h3 class="text-white font-serif text-2xl">Message Received</h3>
+                <p class="text-gray-400 text-sm mt-2">
+                  A stone specialist will contact you shortly.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+      // Optimized Hero Slider
+      const images = [
+        "./assets/images/home/hero1.webp",
+        "./assets/images/home/hero2.webp",
+        "./assets/images/home/hero3.webp",
+      ];
+      let currentImageIndex = 0;
+      const bgContainer = document.getElementById("dynamic-bg");
+
+      function updateHero() {
+        if (!bgContainer) return;
+        bgContainer.style.opacity = "0";
+        setTimeout(() => {
+          bgContainer.style.backgroundImage = `url(${images[currentImageIndex]})`;
+          bgContainer.style.opacity = "1";
+          bgContainer.classList.add("ken-burns");
+          currentImageIndex = (currentImageIndex + 1) % images.length;
+        }, 1000);
+      }
+
+      setInterval(updateHero, 8000);
+      updateHero();
+
+      // Components Loader
+      function fetchComponent(elementId, filePath) {
+        return fetch(filePath)
+          .then((res) => res.text())
+          .then((html) => {
+            const el = document.getElementById(elementId);
+            if (el) {
+              el.innerHTML = html;
+              const scripts = el.querySelectorAll("script");
+              scripts.forEach((old) => {
+                const script = document.createElement("script");
+                script.textContent = old.textContent;
+                document.body.appendChild(script);
+              });
+            }
+          });
+      }
+
+      document.addEventListener("DOMContentLoaded", () => {
+        Promise.all([
+          fetchComponent("nav-placeholder", "./components/navbar.html"),
+          fetchComponent("footer-placeholder", "./components/footer.html"),
+        ]).then(() => {
+          AOS.init({ once: true, duration: 1000, easing: "ease-out-quint" });
+        });
+
+        // Refined Swiper
+        new Swiper(".mySwiper", {
+          slidesPerView: 1.2,
+          spaceBetween: 20,
+          loop: true,
+          centeredSlides: false,
+          autoplay: { delay: 4000, disableOnInteraction: false },
+          pagination: { el: ".swiper-pagination", clickable: true },
+          breakpoints: {
+            640: { slidesPerView: 1.5, spaceBetween: 30 },
+            768: { slidesPerView: 2, spaceBetween: 40 },
+            1280: { slidesPerView: 3, spaceBetween: 40 },
+          },
+        });
+
+        // Contact Form Logic
+        const form = document.getElementById("home-contact-form");
+        if (form) {
+          form.addEventListener("submit", async (e) => {
+            e.preventDefault();
+            const btn = document.getElementById("home-submit-btn");
+            btn.innerHTML = "Processing...";
+
+            try {
+              const response = await fetch("https://api.web3forms.com/submit", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(Object.fromEntries(new FormData(form))),
+              });
+              if (response.ok) {
+                form.classList.add("hidden");
+                document
+                  .getElementById("home-success-message")
+                  .classList.remove("hidden");
+              }
+            } catch (err) {
+              console.error(err);
+              btn.innerHTML = "Send Inquiry";
+            }
+          });
+        }
+      });
+    </script>
+  </body>
+</html>
